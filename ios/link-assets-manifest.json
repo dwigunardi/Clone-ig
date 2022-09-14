@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Grandista.otf",
+      "sha1": "86ed9f1a80b4150068bdb4ffa2b4172fd88b3d24"
+    },
+    {
+      "path": "assets/fonts/Grandista.ttf",
+      "sha1": "0ef94fd8a98a2907309e3d99951bf35b91130436"
+    }
+  ]
+}
