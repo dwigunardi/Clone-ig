@@ -88,6 +88,7 @@ const myTheme = {
   },
 }
 export default function App() {
+
   return (
     <NavigationContainer theme={myTheme}>
       <Tab.Navigator initialRouteName="Instagram"
@@ -95,11 +96,14 @@ export default function App() {
         screenOptions={{
           tabBarShowLabel: false,
           tabBarActiveTintColor: '#000',
-          tabBarInactiveTintColor: "#555",
+          tabBarInactiveTintColor: "#777",
           tabBarLabelStyle: {
             fontSize: 10,
             fontFamily: "Grandista",
             textAlign: 'center'
+          },
+          tabBarStyle: {
+            height: 80,
           },
           headerShown: false,
           title: false,
@@ -112,7 +116,7 @@ export default function App() {
             fontFamily: "Grandista"
           },
           tabBarIcon: ({ color, size, }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <MaterialCommunityIcons name="home" color={color} size={30} />
           ),
 
         }} />
@@ -120,29 +124,34 @@ export default function App() {
           options={{
             tabBarLabel: 'Search',
             tabBarIcon: ({ color, size }) => (
-              <MaterialIcon name="search" color={color} size={size} />
+              <MaterialIcon name="search" color={color} size={30} />
             ),
           }} />
         <Tab.Screen name="Reels" component={NotificationScreen}
           options={{
             tabBarLabel: 'Reels',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="movie-play" color={color} size={size} />
+              <MaterialCommunityIcons name="movie-play" color={color} size={30} />
             )
           }} />
         <Tab.Screen name="Notification" component={NotificationScreen}
           options={{
             tabBarLabel: 'Updates',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="shopping" color={color} size={size} />
+              <MaterialCommunityIcons name="shopping" color={color} size={30} />
             ),
             tabBarBadge: 2,
+            tabBarBadgeStyle: {
+              position: "absolute",
+              top: 15,
+
+            }
           }} />
         <Tab.Screen name="Settings" component={SettingsScreen} options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ tintColor }) => {
             return (<Image
-              style={{ width: 35, height: 30, borderRadius: 50, shadowColor: "#000", shadowRadius: 4, shadowOpacity: 0.5 }}
+              style={{ width: 40, height: 40, borderRadius: 50, shadowColor: "#000", shadowRadius: 4, shadowOpacity: 0.5 }}
               source={require('./assets/image/profile1.jpg')} />);
           }
         }
