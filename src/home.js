@@ -6,6 +6,8 @@ import {
     Heading, Center, HStack, VStack, Flex, ScrollView, Stack
 } from "native-base";
 import LinearGradient from 'react-native-linear-gradient';
+import StoryList from './components/storyList';
+import FeedList from './components/feed';
 
 // function LinearBorder() {
 //     let localStyles = styles(props)
@@ -45,132 +47,10 @@ export default function HomeScreen() {
         lg: 992,
         xl: 1280,
     };
-    const gradientColor = [
-        '#FCAF45',
-        '#FFDC80',
-        '#E1306C',
-        '#FD1D1D',
-        '#F56040',
-        '#F77737',
-        '#833AB4',
-        '#C13584',
-    ]
     return (
         <NativeBaseProvider>
-            <ScrollView horizontal={true} overflowX={'hidden'}>
-                <Box flex="1" safeAreaTop >
-                    <VStack space={'gutter'} w="100%" px="5" >
-                        <Stack direction='row' mb='2.5' mt={'1.5'} space={3}>
-                            <TouchableOpacity onPress={() => Alert.alert("Hy")}>
-                                <LinearGradient
-                                    colors={gradientColor}
-                                    start={{ x: 0.0, y: 1.0 }}
-                                    end={{ x: 1.0, y: 1.0 }}
-                                    style={{
-                                        borderRadius: 100,
-                                        padding: 2,
-                                        overflow: 'hidden',
-                                    }}>
-                                    <Avatar bg="green.500" source={{
-                                        uri: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                                    }} size="lg">
+            <StoryList />
 
-                                    </Avatar>
-                                </LinearGradient>
-                            </TouchableOpacity>
-                            <LinearGradient
-                                colors={gradientColor}
-                                start={{ x: 0.0, y: 1.0 }}
-                                end={{ x: 1.0, y: 1.0 }}
-                                style={{
-                                    borderRadius: 100,
-                                    padding: 2,
-                                    overflow: 'hidden',
-                                }}>
-                                <Avatar bg="cyan.500" source={{
-                                    uri: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                                }} size="lg">
-
-                                </Avatar>
-                            </LinearGradient>
-                            <LinearGradient
-                                colors={gradientColor}
-                                start={{ x: 0.0, y: 1.0 }}
-                                end={{ x: 1.0, y: 1.0 }}
-                                style={{
-                                    borderRadius: 100,
-                                    padding: 2,
-                                    overflow: 'hidden',
-                                }}>
-                                <Avatar bg="indigo.500" source={{
-                                    uri: "https://images.unsplash.com/photo-1614289371518-722f2615943d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                                }} size="lg">
-                                </Avatar>
-                            </LinearGradient>
-                            <LinearGradient
-                                colors={gradientColor}
-                                start={{ x: 0.0, y: 1.0 }}
-                                end={{ x: 1.0, y: 1.0 }}
-                                style={{
-                                    borderRadius: 100,
-                                    padding: 2,
-                                    overflow: 'hidden',
-                                }}>
-                                <Avatar bg="amber.500" source={{
-                                    uri: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                                }} size="lg">
-
-                                </Avatar>
-                            </LinearGradient>
-                            <LinearGradient
-                                colors={gradientColor}
-                                start={{ x: 0.0, y: 1.0 }}
-                                end={{ x: 1.0, y: 1.0 }}
-                                style={{
-                                    borderRadius: 100,
-                                    padding: 2,
-                                    overflow: 'hidden',
-                                }}>
-                                <Avatar bg="green.500" source={{
-                                    uri: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                                }} size="lg">
-
-                                </Avatar>
-                            </LinearGradient>
-                            <LinearGradient
-                                colors={gradientColor}
-                                start={{ x: 0.0, y: 1.0 }}
-                                end={{ x: 1.0, y: 1.0 }}
-                                style={{
-                                    borderRadius: 100,
-                                    padding: 2,
-                                    overflow: 'hidden',
-                                }}>
-                                <Avatar bg="green.500" source={{
-                                    uri: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                                }} size="lg">
-
-                                </Avatar>
-                            </LinearGradient>
-                            <LinearGradient
-                                colors={gradientColor}
-                                start={{ x: 0.0, y: 1.0 }}
-                                end={{ x: 1.0, y: 1.0 }}
-                                style={{
-                                    borderRadius: 100,
-                                    padding: 2,
-                                    overflow: 'hidden',
-                                }}>
-                                <Avatar bg="green.500" source={{
-                                    uri: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                                }} size="lg">
-
-                                </Avatar>
-                            </LinearGradient>
-                        </Stack>
-                    </VStack>
-                </Box>
-            </ScrollView>
         </NativeBaseProvider>
 
     )

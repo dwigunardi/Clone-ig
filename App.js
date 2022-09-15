@@ -9,7 +9,6 @@ import SettingsScreen from './src/setting';
 import NotificationScreen from './src/notification';
 import SearchScreen from './src/search';
 import Feather from "react-native-vector-icons/Feather"
-
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 import { HStack, NativeBaseProvider, VStack } from 'native-base';
@@ -107,7 +106,6 @@ export default function App() {
           },
           headerShown: false,
           title: false,
-
         }}>
         <Tab.Screen name='Home' component={MyStack} options={{
           tabBarShowLabel: false,
