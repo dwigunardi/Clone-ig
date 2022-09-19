@@ -61,7 +61,7 @@ export default function FeedList() {
         {
             id: 4,
             name: 'Saya bukan manusia',
-            avatar: "https://ui-avatars.com/api/?name=FUCK",
+            avatar: "https://ui-avatars.com/api/?name=Faizal+ucil+Cikal+kampret",
             feed: 'https://randomwordgenerator.com/img/picture-generator/57e4d2424954ad14f1dc8460962e33791c3ad6e04e50744172287ed3934dc1_640.jpg',
             description: 'Toxic is way of life, said a person who live in darkness',
             createdAt: new Date().getMinutes(),
@@ -73,7 +73,7 @@ export default function FeedList() {
         return (
             <Container marginY={2}>
                 <Box alignItems="center">
-                    <Box w={[breakpoints.sm, breakpoints.md, breakpoints.lg, breakpoints.xl, breakpoints.base]} rounded="lg" overflow="hidden" borderColor="coolGray.200" _dark={{
+                    <Box minW={[breakpoints.sm, breakpoints.md, breakpoints.lg, breakpoints.xl, breakpoints.base]} rounded="lg" overflow="hidden" borderColor="coolGray.200" _dark={{
                         borderColor: "coolGray.600",
                         backgroundColor: "gray.700"
                     }} _web={{
@@ -85,7 +85,7 @@ export default function FeedList() {
                         <Box>
                             <Flex direction='row'>
                                 <Center>
-                                    <View style={{ width: 34, height: 33, marginBottom: 5, marginTop: 4, marginHorizontal: 5, }}>
+                                    <View style={{ height: 33, marginBottom: 5, marginTop: 4, marginHorizontal: 5, }}>
                                         <LinearGradient
                                             colors={gradientColor}
                                             start={{ x: 0.0, y: 1.0 }}

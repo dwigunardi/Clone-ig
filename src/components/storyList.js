@@ -145,22 +145,24 @@ export default function StoryList() {
                                 contentContainerStyle={{ alignSelf: 'stretch' }}
                                 renderItem={({ item }) => (
                                     <View>
-                                        <LinearGradient
-                                            colors={gradientColor}
-                                            start={{ x: 0.0, y: 1.0 }}
-                                            end={{ x: 1.0, y: 1.0 }}
-                                            style={{
-                                                borderRadius: 100,
-                                                padding: 2,
-                                                overflow: 'hidden',
-                                                marginHorizontal: 5,
-                                            }}>
-                                            <Avatar bg="green.500" source={{
-                                                uri: item.avatar
-                                            }} size="lg"
-                                            >
-                                            </Avatar>
-                                        </LinearGradient>
+                                        <TouchableOpacity>
+                                            <LinearGradient
+                                                colors={gradientColor}
+                                                start={{ x: 0.0, y: 1.0 }}
+                                                end={{ x: 1.0, y: 1.0 }}
+                                                style={{
+                                                    borderRadius: 100,
+                                                    padding: 2,
+                                                    overflow: 'hidden',
+                                                    marginHorizontal: 5,
+                                                }}>
+                                                <Avatar bg="green.500" source={{
+                                                    uri: item.avatar
+                                                }} size="lg"
+                                                >
+                                                </Avatar>
+                                            </LinearGradient>
+                                        </TouchableOpacity>
                                         <Text style={{ textAlign: "center" }}>{item.name}</Text>
                                     </View>
                                 )}
