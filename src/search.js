@@ -92,7 +92,7 @@ export default function SearchScreen() {
 
 
     }, [])
-    console.log(photoData, "ini poto data")
+
     return (
         <NativeBaseProvider>
             <SearchBar />
