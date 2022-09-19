@@ -20,6 +20,13 @@ export default function FeedList() {
         '#833AB4',
         '#C13584',
     ]
+    const breakpoints = {
+        base: 0,
+        sm: 395,
+        md: 768,
+        lg: 992,
+        xl: 1280,
+    };
     const dataFeed = [
         {
             id: 1,
@@ -64,9 +71,9 @@ export default function FeedList() {
     ]
     function RenderData(item) {
         return (
-            <Container marginX={4} marginY={2}>
+            <Container marginY={2}>
                 <Box alignItems="center">
-                    <Box w="sm" rounded="lg" overflow="hidden" borderColor="coolGray.200" borderWidth="1" _dark={{
+                    <Box w={[breakpoints.sm, breakpoints.md, breakpoints.lg, breakpoints.xl, breakpoints.base]} rounded="lg" overflow="hidden" borderColor="coolGray.200" _dark={{
                         borderColor: "coolGray.600",
                         backgroundColor: "gray.700"
                     }} _web={{
@@ -101,7 +108,7 @@ export default function FeedList() {
                                 </Center>
                                 <Spacer />
                                 <Center marginRight={2}>
-                                    <SimpleLineIcons name='options-vertical' size={20} />
+                                    <SimpleLineIcons name='options-vertical' size={20} color="#000" />
                                 </Center>
                             </Flex>
                             <AspectRatio w="full" ratio={16 / 9}>

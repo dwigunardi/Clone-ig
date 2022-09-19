@@ -39,8 +39,8 @@ export default function StoryList() {
     const AvatarData = [
         {
             id: 1,
-            name: 'ucil',
-            avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+            name: 'Add story',
+            avatar: "https://images.unsplash.com/photo-1601233749202-95d04d5b3c00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2876&q=80",
         },
         {
             id: 2,
@@ -107,7 +107,7 @@ export default function StoryList() {
     };
     function check(item) {
         if (item.id == 1) {
-            return <TouchableOpacity onPress={() => openCamera()}>
+            return <TouchableOpacity onPress={openCamera()}>
                 <LinearGradient
                     colors={gradientColor}
                     start={{ x: 0.0, y: 1.0 }}
@@ -127,24 +127,7 @@ export default function StoryList() {
         } else if (item.id >= 2) {
             return (
                 <View>
-                    <LinearGradient
-                        colors={gradientColor}
-                        start={{ x: 0.0, y: 1.0 }}
-                        end={{ x: 1.0, y: 1.0 }}
-                        style={{
-                            borderRadius: 100,
-                            padding: 2,
-                            overflow: 'hidden',
-                            marginHorizontal: 5,
-                        }}>
-                        <Avatar bg="green.500" source={{
-                            uri: item.avatar
-                        }} size="lg"
 
-                        >
-                        </Avatar>
-                    </LinearGradient>
-                    <Text style={{ textAlign: "center" }}>{item.name}</Text>
                 </View>
             )
         }
@@ -152,9 +135,8 @@ export default function StoryList() {
     return (
         <SafeAreaView style={styles.container}>
             <Box flex="1" safeAreaTop={true} >
-                <VStack w="100%" px="5" >
-                    <Stack direction='row' mb='2.5' space={3}>
-
+                <VStack w="100%" px="1" >
+                    <Stack direction='row' mb='2.5' space={1}>
                         <View>
                             <FlatList
                                 initialScrollIndex={0}
@@ -163,8 +145,23 @@ export default function StoryList() {
                                 contentContainerStyle={{ alignSelf: 'stretch' }}
                                 renderItem={({ item }) => (
                                     <View>
-                                        {check(item)}
-
+                                        <LinearGradient
+                                            colors={gradientColor}
+                                            start={{ x: 0.0, y: 1.0 }}
+                                            end={{ x: 1.0, y: 1.0 }}
+                                            style={{
+                                                borderRadius: 100,
+                                                padding: 2,
+                                                overflow: 'hidden',
+                                                marginHorizontal: 5,
+                                            }}>
+                                            <Avatar bg="green.500" source={{
+                                                uri: item.avatar
+                                            }} size="lg"
+                                            >
+                                            </Avatar>
+                                        </LinearGradient>
+                                        <Text style={{ textAlign: "center" }}>{item.name}</Text>
                                     </View>
                                 )}
                                 keyExtractor={(item) => item.id}
