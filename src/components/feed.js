@@ -61,19 +61,30 @@ export default function FeedList() {
         {
             id: 4,
             name: 'Saya bukan manusia',
-            avatar: "https://ui-avatars.com/api/?name=Faizal+ucil+Cikal+kampret",
+            avatar: "https://ui-avatars.com/api/?name=FUCK",
             feed: 'https://randomwordgenerator.com/img/picture-generator/57e4d2424954ad14f1dc8460962e33791c3ad6e04e50744172287ed3934dc1_640.jpg',
             description: 'Toxic is way of life, said a person who live in darkness',
             createdAt: new Date().getMinutes(),
             liked: Math.random().toString().slice(2, 3),
             comment: Math.random().toString().length,
+        },
+        {
+            id: 5,
+            name: 'dagelan',
+            avatar: "https://ui-avatars.com/api/?name=D+a+ge+lan",
+            feed: 'https://randomwordgenerator.com/img/picture-generator/5fe9d045495bb10ff3d8992cc12c30771037dbf852547941762a7ed7974b_640.jpg',
+            description: 'Penyeselan pasti datang di akhir, kalau di awal namanya pendaftaran.',
+            createdAt: new Date().getMinutes(),
+            liked: Math.random().toString().slice(2, 3),
+            comment: Math.random().toString().length,
         }
+
     ]
     function RenderData(item) {
         return (
             <Container marginY={2}>
                 <Box alignItems="center">
-                    <Box minW={[breakpoints.sm, breakpoints.md, breakpoints.lg, breakpoints.xl, breakpoints.base]} rounded="lg" overflow="hidden" borderColor="coolGray.200" _dark={{
+                    <Box w={[breakpoints.sm, breakpoints.md, breakpoints.lg, breakpoints.xl, breakpoints.base]} rounded="lg" overflow="hidden" borderColor="coolGray.200" _dark={{
                         borderColor: "coolGray.600",
                         backgroundColor: "gray.700"
                     }} _web={{
@@ -85,7 +96,7 @@ export default function FeedList() {
                         <Box>
                             <Flex direction='row'>
                                 <Center>
-                                    <View style={{ height: 33, marginBottom: 5, marginTop: 4, marginHorizontal: 5, }}>
+                                    <View style={{ width: 34, height: 33, marginBottom: 5, marginTop: 4, marginHorizontal: 5, }}>
                                         <LinearGradient
                                             colors={gradientColor}
                                             start={{ x: 0.0, y: 1.0 }}

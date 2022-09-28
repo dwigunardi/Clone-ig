@@ -12,21 +12,18 @@ import Feather from "react-native-vector-icons/Feather"
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 import { HStack, NativeBaseProvider, VStack } from 'native-base';
+import ImagePicker from 'react-native-image-crop-picker';
+import NewStory from './src/newStory';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 
-function Test1() {
+
+
+function DetailsScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Test1!</Text>
-    </View>
-  );
-}
-function Test2() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>test2!</Text>
+      <Text style={{ fontSize: 30, color: "black" }}>Details!</Text>
     </View>
   );
 }
@@ -41,8 +38,9 @@ function MessageIcon() {
   )
 }
 function MyStack() {
+  const [ImagePath, setImagePath] = useState([])
   return (
-    <Stack.Navigator initialRouteName='Instagram'
+    <Stack.Navigator initialRouteName='Home'
 
       screenOptions={{
 
@@ -54,16 +52,15 @@ function MyStack() {
             <Text style={{ fontFamily: "Grandista", marginLeft: 10, color: "#000", fontSize: 20 }}>Instagram Clone</Text>
           ),
           headerRight: () => (
-
             <NativeBaseProvider>
               <HStack space={4} justifyContent='center' mt={2} mr="4">
-                <TouchableOpacity onPress={() => Alert.alert("OKE MINT")}>
+                <TouchableOpacity onPress={() => navigation.navigate("NewStory")}>
                   <MaterialCommunityIcons name='plus-box-outline' size={30} color="#000" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Test2')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Details')}  >
                   <MaterialCommunityIcons name='heart-outline' size={30} color="#000" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Test2')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Details')}>
                   <MessageIcon />
                 </TouchableOpacity>
               </HStack>
@@ -74,6 +71,8 @@ function MyStack() {
           headerMode: "screen",
 
         })} />
+      <Stack.Screen name="Details" component={DetailsScreen} />
+      <Stack.Screen name="NewStory" component={NewStory} />
     </Stack.Navigator >
 
   );

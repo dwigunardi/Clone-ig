@@ -142,9 +142,10 @@ export default function StoryList() {
                                 initialScrollIndex={0}
                                 horizontal={true}
                                 data={AvatarData}
+                                showsHorizontalScrollIndicator={false}
                                 contentContainerStyle={{ alignSelf: 'stretch' }}
                                 renderItem={({ item }) => (
-                                    <View>
+                                    <View style={{ overflow: "hidden" }}>
                                         <TouchableOpacity>
                                             <LinearGradient
                                                 colors={gradientColor}

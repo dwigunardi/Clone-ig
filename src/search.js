@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View, Image } from 'react-native';
-import { VStack, Box, Divider, NativeBaseProvider, AspectRatio, Center, HStack, Heading, Stack, Input, Icon, } from 'native-base';
+import { Text, View, Image, FlatList, TouchableOpacity } from 'react-native';
+import { VStack, Box, Divider, NativeBaseProvider, AspectRatio, Center, HStack, Heading, Stack, Input, Icon, Spacer, } from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { createClient } from 'pexels';
 import axios from 'axios';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 const client = createClient('563492ad6f9170000100000190b3fb58cd8140029ba8e1b22ffc5331');
 
 const SearchData = [
@@ -87,7 +88,7 @@ export default function SearchScreen() {
             }
         }).then((res) => {
 
-            setPhotoData(res.data)
+            setPhotoData(res.data.photos)
         })
 
 
@@ -96,31 +97,38 @@ export default function SearchScreen() {
     return (
         <NativeBaseProvider>
             <SearchBar />
-            <Box alignItems="flex-start" margin={'5'}>
-                <Box w={'20'} h='40' rounded="md" overflow="hidden" borderColor="coolGray.200" borderWidth="1" _dark={{
-                    borderColor: "coolGray.600",
-                    backgroundColor: "gray.700"
-                }} _web={{
-                    shadow: 2,
-                    borderWidth: 0
-                }} _light={{
-                    backgroundColor: "gray.50"
-                }}>
-                    <Box>
-                        <AspectRatio w="100%" ratio={9 / 16}>
-                            <Image source={{
-                                uri: "https://www.pexels.com/photo/sunset-with-love-13585848/",
-                                headers:
-                                {
-                                    Authorization: '563492ad6f9170000100000190b3fb58cd8140029ba8e1b22ffc5331',
-                                }
-                            }} alt="image"
 
-                            />
-                        </AspectRatio>
-                    </Box>
-                </Box>
-            </Box>
+            <FlatList
+                initialScrollIndex={0}
+                data={photoData}
+                scrollsToTop={true}
+                bounces={true}
+                alwaysBounceVertical={true}
+                contentContainerStyle={{ justifyContent: "space-around" }}
+                renderItem={({ item }) => (
+                    <View style={{ marginBottom: 10, }}>
+                        <Box style={{ position: "relative" }}>
+                            <TouchableOpacity>
+                                <AspectRatio w="100%" ratio={9 / 16}>
+                                    <Image source={{
+                                        uri: item.src.portrait,
+                                    }} alt="image"
+                                    />
+
+                                </AspectRatio>
+                            </TouchableOpacity>
+                            <View style={{ fontSize: 20, color: "#000", position: "absolute", top: 30, right: 30, }}>
+                                <TouchableOpacity>
+                                    <MaterialCommunityIcons name="movie-play" color={"#fff"} size={30} />
+                                </TouchableOpacity>
+                            </View>
+                        </Box>
+
+                    </View>
+                )}
+                keyExtractor={(item) => item.id}
+            />
+
         </NativeBaseProvider>
     );
 }
