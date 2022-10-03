@@ -14,6 +14,7 @@ import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 import { HStack, NativeBaseProvider, VStack } from 'native-base';
 import ImagePicker from 'react-native-image-crop-picker';
 import NewStory from './src/newStory';
+import { getHeaderTitle } from '@react-navigation/elements';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -146,6 +147,16 @@ export default function App() {
           }} />
         <Tab.Screen name="Settings" component={SettingsScreen} options={{
           tabBarLabel: 'Profile',
+          headerShown: true,
+          // title: "halo",
+          header: ({ navigation, route, options }) => {
+            const title = getHeaderTitle(options, route.name);
+
+            return <View style={{ display: "flex", flexDirection: "row" }} >
+              <TouchableOpacity onPress={() => navigation.goBack()}><Text style={{ color: "black" }}>kembali</Text></TouchableOpacity>
+              <Text style={{ color: "black" }}>{title}</Text>
+            </View>
+          },
           tabBarIcon: ({ tintColor }) => {
             return (<Image
               style={{ width: 40, height: 40, borderRadius: 50, shadowColor: "#000", shadowRadius: 4, shadowOpacity: 0.5 }}
