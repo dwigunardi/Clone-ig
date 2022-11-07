@@ -152,9 +152,12 @@ export default function App() {
           header: ({ navigation, route, options }) => {
             const title = getHeaderTitle(options, route.name);
 
-            return <View style={{ display: "flex", flexDirection: "row" }} >
-              <TouchableOpacity onPress={() => navigation.goBack()}><Text style={{ color: "black" }}>kembali</Text></TouchableOpacity>
-              <Text style={{ color: "black" }}>{title}</Text>
+            return <View style={{ display: "flex", flexDirection: "row", padding:10 }} >
+              <TouchableOpacity onPress={() => navigation.goBack()} style={{width:50}}>
+                <MaterialCommunityIcons name="arrow-left" color={'#000'} size={30} />
+              </TouchableOpacity>
+              <Text style={{color:"black", fontSize:20}}>Kembali</Text>
+              {/* <Text style={{ color: "black" }}>{title}</Text> */}
             </View>
           },
           tabBarIcon: ({ tintColor }) => {
